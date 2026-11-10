@@ -1,0 +1,1669 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+
+.sable-header {
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    color: white;
+    border: 1px solid #222;
+}
+
+/* NAVBAR */
+
+.sable-nav {
+    width: 100%;
+    height: 110px;
+    padding: 0 3.4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.sable-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    transition: 0.3s;
+}
+
+.sable-logo:hover {
+    color: #69d8ce;
+}
+
+.sable-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sable-menu a {
+    color: #aaa;
+    font-size: 13px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sable-menu a:hover {
+    color: #69d8ce;
+    transform: translateY(-3px);
+}
+
+.nuqta,
+.sable-menu a:first-child span {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #55d5ca;
+    margin-left: 3px;
+}
+
+.nav-tugma {
+    width: 165px;
+    background: linear-gradient(135deg, #ff00ee 0%, #041dfc 50%, #7118ca 100%);
+    height: 43px;
+    
+    border-radius: 40px;
+    text-decoration: none;
+    color: rgb(243, 220, 220);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-tugma:hover {
+    background: linear-gradient(135deg, #1900ff 0%, #0c9fbc 60%, #4300f8 100%);
+    transform: scale(1.06);
+}
+
+/* KARTALAR */
+
+.karta {
+    position: absolute;
+    z-index: 2;
+    transition: transform 0.7s ease, filter 0.7s ease;
+}
+
+.karta img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.karta-birinchi {
+    width: 400px;
+    height: 250px;
+    top: -80px;
+    left: 19%;
+    transform: rotate(30deg);
+    animation: kartaTepada 5s ease-in-out infinite;
+}
+
+.karta-birinchi:hover {
+    animation-play-state: paused;
+    transform: rotate(20deg) translateY(25px) scale(1.08);
+    filter: drop-shadow(0 15px 30px #43cfc055);
+}
+
+.karta-ikkinchi {
+    width: 410px;
+    height: 260px;
+    right: 19%;
+    bottom: -105px;
+    transform: rotate(30deg);
+    animation: kartaPastda 5s ease-in-out infinite;
+}
+
+.karta-ikkinchi:hover {
+    animation-play-state: paused;
+    transform: rotate(18deg) translateY(-35px) scale(1.08);
+    filter: drop-shadow(0 15px 35px #43cfc055);
+}
+
+@keyframes kartaTepada {
+    0%, 100% {
+        margin-top: 0;
+    }
+                              
+    50% {
+        margin-top: 15px;
+    }
+}
+
+@keyframes kartaPastda {
+    0%, 100% {
+        margin-bottom: 0;
+    }
+
+    50% {
+        margin-bottom: 15px;
+    }
+}
+
+/* MARKAZ */
+
+.sable-markaz {
+    position: absolute;
+    z-index: 5;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.sable-markaz h1 {
+    font-size: clamp(35px, 4.3vw, 55px);
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: 0.5px;
+}
+
+.sable-markaz h1 strong {
+    font-weight: 750;
+}
+
+.explore {
+    width: 138px;
+    height: 70px;
+    background: #69d8ce;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px auto 0;
+    color: black;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.35s;
+}
+
+.explore:hover {
+    background: linear-gradient(135deg, #ff00ee 0%, #041dfc 50%, #7118ca 100%);
+    transform: scale(1.1);
+    box-shadow: 0 0 35px #69d8ce66;
+}
+
+/* FOOTER */
+
+.sable-card {
+    position: absolute;
+    bottom: 35px;
+    left: 3.4%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 5;
+}
+
+.sable-card h2 {
+    margin-top: -100px;
+    font-size: 24px;
+    color: #aaa;
+}
+
+.sable-card p {
+    max-width: 290px;
+    margin-top: -100px;
+    font-size: 9px;
+    line-height: 1.5;
+    color: #aaa;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .karta-birinchi {
+        left: 8%;
+    }
+
+    .karta-ikkinchi {
+        right: 5%;
+    }
+
+    .sable-markaz {
+        top: 32%;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .sable-nav {
+        height: 85px;
+    }
+
+    .sable-logo {
+        font-size: 27px;
+    }
+
+    .sable-menu {
+        gap: 12px;
+        top: 105px;
+    }
+
+    .sable-menu a {
+        font-size: 10px;
+    }
+
+    .nav-tugma {
+        width: 100px;
+        height: 35px;
+        font-size: 9px;
+    }
+
+    .sable-markaz {
+        top: 34%;
+        padding: 0 10px;
+    }
+
+    .sable-markaz h1 {
+        font-size: clamp(28px, 6vw, 42px);
+    }
+
+    .karta-birinchi {
+        width: 250px;
+        height: 170px;
+        left: 5%;
+        top: 5%;
+    }
+
+    .karta-ikkinchi {
+        width: 260px;
+        height: 180px;
+        right: -5%;
+        bottom: 0;
+    }
+
+    .sable-footer {
+        bottom: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .sable-menu {
+        gap: 9px;
+    }
+
+    .sable-menu a {
+        font-size: 9px;
+    }
+
+    .sable-markaz h1 {
+        font-size: 29px;
+    }
+
+    .sable-footer p {
+        max-width: 230px;
+        font-size: 8px;
+    }
+}
+
+.kartalar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.kartalar img {
+    position: absolute;
+    width: 850px;
+    height: auto;
+    object-fit: contain;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+    animation: kartalarAnimatsiya 5s ease-in-out infinite;
+}
+
+@keyframes kartalarAnimatsiya {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.12);
+    }
+}
+
+.sable-markaz {
+    position: absolute;
+    z-index: 5;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .kartalar img {
+        width: 600px;
+    }
+
+    .sable-markaz {
+        top: 34%;
+    }
+}
+
+@media (max-width: 480px) {
+    .kartalar img {
+        width: 480px;
+    }
+
+    .sable-markaz h1 {
+        font-size: 29px;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow-x: hidden;
+}
+
+/* SECTION */
+
+.sable-info {
+    width: 100%;
+    min-height: 750px;
+    background: #1b1b1b;
+    color: white;
+    padding: 95px 6% 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* SARLAVHA */
+
+.info-sarlavha {
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.info-sarlavha span {
+    color: #69d8ce;
+    font-size: 13px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.info-sarlavha h2 {
+    font-size: 29px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.info-sarlavha p {
+    font-size: 23px;
+    color: #ddd;
+}
+
+/* ASOSIY QISM */
+
+.info-asosiy {
+    max-width: 1200px;
+    height: 510px;
+    margin: 20px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+}
+
+/* USTUNLAR */
+
+.info-ustun {
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+}
+
+.chap-ustun {
+    align-items: flex-start;
+    text-align: left;
+    padding-right: 320px;
+}
+
+.ong-ustun {
+    align-items: flex-end;
+    text-align: right;
+    padding-left: 320px;
+}
+
+/* 4 TA MA'LUMOT */
+
+.info-card {
+    width: 100%;
+    max-width: 310px;
+    transition: transform 0.4s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+}
+
+.info-card img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 14px;
+    transition: 0.4s;
+}
+
+.info-card:hover img {
+    transform: scale(1.15);
+}
+
+.info-card h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* TELEFON */
+
+.telefon-rasm {
+    position: absolute;
+    width: 450px;
+    height: 620px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.telefon-rasm img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: rotate(-24deg);
+    animation: telefonHarakat 2s  infinite;
+}
+
+@keyframes telefonHarakat {
+   0%, 100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: 15px;
+    }
+}
+
+
+
+/* BRENDLAR */
+
+.sable-brendlar {
+    width: 100%;
+    min-height: 120px;
+    border-top: 1px solid #393939;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: relative;
+    z-index: 3;
+}
+
+.sable-brendlar h2 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    transition: 0.3s;
+    cursor: pointer;
+    color: white;
+}
+
+.sable-brendlar h2:hover {
+    color: #69d8ce;
+    transform: translateY(-6px) scale(1.08);
+}
+
+.sable-brendlar h3 {
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    transition: 0.3s;
+    cursor: pointer;
+    color: white;
+}
+
+.sable-brendlar h3:hover {
+    color: #69d8ce;
+    transform: translateY(-6px);
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .sable-info {
+        padding: 75px 4% 0;
+    }
+
+    .info-asosiy {
+        height: 480px;
+    }
+
+    .info-ustun {
+        height: 340px;
+    }
+
+    .chap-ustun {
+        padding-right: 220px;
+    }
+
+    .ong-ustun {
+        padding-left: 220px;
+    }
+
+    .telefon-rasm {
+        width: 350px;
+        height: 500px;
+    }
+
+    .info-card h3 {
+        font-size: 16px;
+    }
+
+    .info-card p {
+        font-size: 12px;
+    }
+
+    .sable-brendlar h2 {
+        font-size: 25px;
+    }
+
+    .sable-brendlar h3 {
+        font-size: 15px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .sable-info {
+        padding: 55px 5% 0;
+        min-height: 800px;
+    }
+
+    .info-sarlavha h2 {
+        font-size: 21px;
+    }
+
+    .info-sarlavha p {
+        font-size: 16px;
+    }
+
+    .info-sarlavha span {
+        font-size: 10px;
+    }
+
+    .info-asosiy {
+        height: 600px;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 25px;
+    }
+
+    .chap-ustun {
+        padding-right: 0;
+        align-items: center;
+        text-align: center;
+    }           
+}
+
+
+.karta-section {
+    width: 100%;
+    min-height: 650px;
+    background: #000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    overflow: hidden;
+    position: relative;
+    gap: 50px;
+}
+
+/* MATN */
+
+.karta-matn {
+    width: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.karta-label {
+    color: #69d8ce;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.karta-matn h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.karta-matn h1 strong {
+    color: #69d8ce;
+    font-weight: 700;
+}
+
+.karta-matn p {
+    color: #999;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 440px;
+    margin-bottom: 35px;
+}
+
+.karta-btn {
+    width: 190px;
+    height: 58px;
+    background: #69d8ce;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #000;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    transition: 0.4s;
+}
+
+.karta-btn:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px #69d8ce44;
+}
+
+.karta-btn span {
+    font-size: 18px;
+}
+
+/* PASTKI MATN */
+
+.karta-pastki {
+    display: flex;
+    gap: 30px;
+    margin-top: 75px;
+    flex-wrap: wrap;
+}
+
+.karta-pastki span {
+    color: #777;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* KARTA RASMI */
+
+.karta-rasm {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.karta-rasm img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    object-fit: contain;
+    transform: rotate(-18deg);
+    animation: karta-yurish 5s ease-in-out infinite;
+    filter: drop-shadow(0 25px 35px #69d8ce22);
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .karta-section {
+        padding: 70px 5%;
+        gap: 20px;
+    }
+
+    .karta-matn h1 {
+        font-size: 42px;
+    }
+
+    .karta-rasm img {
+        max-width: 400px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .karta-section {
+        flex-direction: column;
+        padding: 75px 7% 50px;
+        gap: 30px;
+        min-height: auto;
+    }
+
+    .karta-matn {
+        width: 100%;
+    }
+
+    .karta-matn h1 {
+        font-size: 39px;
+    }
+
+    .karta-matn p {
+        font-size: 14px;
+    }
+
+    .karta-pastki {
+        margin-top: 40px;
+        gap: 15px;
+    }
+
+    .karta-rasm {
+        width: 100%;
+    }
+
+    .karta-rasm img {
+        max-width: 350px;
+    }
+}
+
+
+.benefit-section {
+    width: 100%;
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #1b1b1b;
+    overflow: hidden;
+}
+
+/* CHAP TOMON */
+
+.benefit-left {
+    padding: 65px 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #1b1b1b;
+    color: white;
+}
+
+.benefit-item {
+    padding: 30px 0;
+    border-top: 1px solid #343434;
+    transition: 0.4s;
+}
+
+.benefit-item:first-child {
+    border-top: 1px solid #444;
+}
+
+.benefit-item:hover {
+    padding-left: 10px;
+}
+
+.benefit-item h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #777;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.benefit-item:hover h2 {
+    color: #69d8ce;
+}
+
+.benefit-item p {
+    max-width: 430px;
+    color: #888;
+    font-size: 13px;
+    line-height: 1.7;
+    transition: 0.3s;
+}
+
+.benefit-item:hover p {
+    color: #bbb;
+}
+
+/* BIRINCHI MATN */
+
+.benefit-item.birinchi h2 {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.benefit-item.birinchi p {
+    color: #bbb;
+}
+
+/* ONG TOMON */
+
+.benefit-right {
+    background: #dedde2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-height: 650px;
+}
+
+.benefit-rasm {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.benefit-rasm img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.7s ease;
+}
+
+.benefit-rasm:hover img {
+    transform: scale(1.06);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .benefit-left {
+        padding: 45px 8%;
+    }
+
+    .benefit-item h2 {
+        font-size: 18px;
+    }
+
+    .benefit-item.birinchi h2 {
+        font-size: 21px;
+    }
+
+    .benefit-item p {
+        font-size: 11px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .benefit-section {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-left {
+        padding: 40px 8%;
+    }
+
+    .benefit-item {
+        padding: 25px 0;
+    }
+
+    .benefit-right {
+        min-height: 400px;
+    }
+
+    .benefit-rasm img {
+        max-height: 400px;
+    }
+}
+
+
+/* COMPARE SECTION */
+
+.compare-section {
+    width: 100%;
+    min-height: 850px;
+    background: #000;
+    color: white;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+/* MARQUEE */
+
+.compare-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 0 35px;
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 35px;
+    width: max-content;
+    animation: marqueeYurish 18s linear infinite;
+}
+
+.marquee-track span {
+    font-size: 34px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.marquee-dot {
+    color: #69d8ce;
+}
+
+@keyframes marqueeYurish {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-35%);
+    }
+}
+
+/* CONTENT */
+
+.compare-content {
+    max-width: 950px;
+    margin: auto;
+    padding: 0 35px;
+}
+
+/* KARTALAR */
+
+.compare-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 35%;
+    margin-bottom: 25px;
+}
+
+.compare-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.compare-card img {
+    width: 115px;
+    height: 75px;
+    object-fit: contain;
+    transition: 0.4s;
+}
+
+.compare-card img:hover {
+    transform: translateY(-7px) scale(1.08);
+}
+
+.compare-card p {
+    color: #69d8ce;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+/* TABLE */
+
+.compare-table {
+    width: 100%;
+}
+
+.compare-row {
+    min-height: 39px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    border-top: 1px solid #202020;
+    transition: 0.3s;
+}
+
+.compare-row:hover {
+    background: #817d7d;
+    color: #000;
+}
+
+.compare-row p {
+    font-size: 11px;
+    color: #fefeff;
+    transition: .03s;
+}
+
+.compare-row span {
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+
+.compare-row .lock {
+    color: #888;
+    font-size: 13px;
+}
+
+.narx-row {
+    min-height: 55px;
+}
+
+.narx {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.narx small {
+    font-size: 8px;
+    color: #777;
+}
+
+/* BUTTONS */
+
+.compare-buttons {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    margin-top: 15px;
+    margin-bottom: 90px;
+}
+
+.compare-buttons a {
+    width: max-content;
+    padding: 12px 20px;
+    background: #69d8ce;
+    color: #000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.compare-buttons a:first-child {
+    grid-column: 2;
+}
+
+.compare-buttons a:last-child {
+    grid-column: 3;
+    justify-self: center;
+}
+
+.compare-buttons a:hover {
+    background: linear-gradient(135deg, #ff00ee 0%, #041dfc 50%, #7118ca 100%);
+    transform: translateY(-4px);
+}
+
+/* REVIEWS */
+
+.review-section {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.review-rating {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.review-rating h2 {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.rating-stars {
+    color: #69d8ce;
+    font-size: 18px;
+    letter-spacing: 4px;
+    margin: 5px 0;
+}
+
+.review-rating p {
+    font-size: 9px;
+    color: #777;
+    letter-spacing: 2px;
+}
+
+/* REVIEW SLIDER */
+
+.review-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.review-track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    animation: reviewYurish 25s linear infinite;
+}
+
+.review-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes reviewYurish {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.review-card {
+    width: 340px;
+    min-height: 185px;
+    background: #1c1c1e;
+    border-radius: 14px;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: 0.4s;
+}
+
+.review-card:hover {
+    background: #4560f6;
+    transform: translateY(-7px);
+}
+
+.quote {
+    position: absolute;
+    left: 23px;
+    top: 22px;
+    font-size: 45px;
+    font-weight: 700;
+    color: #13bdb1;
+}
+
+.review-card p {
+    font-size: 14px;
+    line-height: 1.45;
+    color: #ddd;
+    padding-left: 45px;
+    max-width: 280px;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-left: 45px;
+}
+
+.review-author span {
+    width: 25px;
+    height: 2px;
+    background: white;
+}
+
+.review-author small {
+    font-size: 10px;
+    color: white;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .marquee-track span {
+        font-size: 27px;
+    }
+
+    .compare-content {
+        padding: 0 20px;
+    }
+
+    .compare-cards {
+        margin-left: 32%;
+    }
+
+    .compare-card img {
+        width: 90px;
+        height: 65px;
+    }
+
+    .compare-card p {
+        font-size: 10px;
+    }
+
+    .compare-row p {
+        font-size: 9px;
+    }
+
+    .compare-row {
+        min-height: 42px;
+    }
+
+    .review-card {
+        width: 290px;
+        min-height: 180px;
+    }
+
+    .review-card p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .compare-section {
+        min-height: 750px;
+    }
+
+    .marquee-track span {
+        font-size: 23px;
+    }
+
+    .compare-content {
+        padding: 0 12px;
+    }
+
+    .compare-cards {
+        margin-left: 33%;
+        gap: 5px;
+    }
+
+    .compare-card img {
+        width: 75px;
+        height: 55px;
+    }
+
+    .compare-card p {
+        font-size: 9px;
+    }
+
+    .compare-row {
+        grid-template-columns: 2fr 0.7fr 0.7fr;
+        min-height: 42px;
+    }
+
+    .compare-row p {
+        font-size: 8px;
+    }
+
+    .compare-row span {
+        font-size: 13px;
+    }
+
+    .narx {
+        font-size: 19px;
+    }
+
+    .compare-buttons a {
+        padding: 10px 12px;
+        font-size: 7px;
+    }
+
+    .review-rating h2 {
+        font-size: 40px;
+    }
+
+    .review-card {
+        width: 270px;
+        min-height: 170px;
+        padding: 25px 15px;
+    }
+
+    .review-card p {
+        font-size: 11px;
+    }
+}
+
+
+.sable-footer {
+    width: 100%;
+    min-height: 650px;
+    background: #000;
+    color: #fff;
+    padding: 65px 8% 40px;
+    font-family: Arial, sans-serif;
+}
+
+/* USTKI QISM */
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    min-height: 310px;
+    gap: 40px;
+}
+
+/* CHAP LINKLAR */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-column h3,
+.footer-contact h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.footer-column a,
+.footer-contact a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 10px;
+    margin-bottom: 7px;
+    transition: 0.3s;
+}
+
+.footer-column a:hover,
+.footer-contact a:hover {
+    color: #69d8ce;
+    transform: translateX(5px);
+}
+
+.footer-column a span {
+    color: #69d8ce;
+}
+
+.footer-column .debit-title {
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+.footer-column .katta-link {
+    font-size: 17px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer-column .katta-link:hover {
+    color: #69d8ce;
+}
+
+/* CONTACT */
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-contact p {
+    font-size: 10px;
+    color: #aaa;
+    margin-top: 0;
+}
+
+/* SOCIAL ICONLAR */
+
+.footer-social {
+    display: flex;
+    gap: 24px;
+    margin-top: auto;
+    margin-bottom: 35px;
+}
+
+.footer-social a {
+    width: 23px;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+    transition: 0.35s;
+}
+
+.footer-social a:hover {
+    color: #69d8ce;
+    transform: translateY(-6px) scale(1.2);
+}
+
+/* SABLE LOGO */
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.footer-logo h1 {
+    font-size: 55px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.footer-logo h1:hover {
+    color: #69d8ce;
+    transform: scale(1.08);
+}
+
+.footer-logo p {
+    font-size: 8px;
+    color: #aaa;
+    margin-bottom: 35px;
+}
+
+/* CHIZIQ */
+
+.footer-line {
+    width: 100%;
+    height: 1px;
+    background: #242424;
+    margin-bottom: 25px;
+}
+
+/* PASTKI MATNLAR */
+
+.footer-bottom {
+    width: 100%;
+}
+
+.footer-policy {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 27px;
+}
+
+.footer-policy a,
+.footer-policy span {
+    color: #666;
+    font-size: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-policy a:hover {
+    color: #69d8ce;
+}
+
+.footer-legal {
+    width: 100%;
+}
+
+.footer-legal p {
+    color: #555;
+    font-size: 8px;
+    line-height: 1.6;
+    margin-bottom: 2px;
+    transition: 0.3s;
+}
+
+.footer-legal p:hover {
+    color: #999;
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+    .sable-footer {
+        padding: 50px 5% 35px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        min-height: 350px;
+        gap: 30px;
+    }
+
+    .footer-logo {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .footer-logo h1 {
+        font-size: 42px;
+    }
+
+    .footer-logo p {
+        margin-bottom: 0;
+    }
+}
+
+/* TELEFON */
+
+@media (max-width: 500px) {
+    .sable-footer {
+        padding: 40px 6% 30px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 15px;
+        min-height: 360px;
+    }
+
+    .footer-column h3,
+    .footer-contact h3 {
+        font-size: 14px;
+    }
+
+    .footer-column a,
+    .footer-contact a,
+    .footer-contact p {
+        font-size: 9px;
+    }
+
+    .footer-column .katta-link {
+        font-size: 14px;
+    }
+
+    .footer-social {
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .footer-social a {
+        font-size: 13px;
+    }
+
+    .footer-logo h1 {
+        font-size: 35px;
+    }
+
+    .footer-logo p {
+        font-size: 7px;
+    }
+
+    .footer-legal p {
+        font-size: 7px;
+    }
+}
+
+.sable-footer {
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+    margin-top: 0;
+    z-index: 1;
+}
+
